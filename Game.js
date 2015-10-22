@@ -9,12 +9,10 @@ function preload(){
 function create(){
     game.physics.startSystem(Phaser.Physics.ARCADE);
     
-    game.physics.arcade.enable(Bird);
-
-    
     Bird = game.add.sprite(100,100,"Bird");
-    Bird.enableBody = true;
+    game.physics.arcade.enable(Bird);
     Bird.scale.setTo(0.06, 0.06);
+    Bird.body.collideWorldBounds = true;
     Bird.body.gravity.y = 20;
 }
 
